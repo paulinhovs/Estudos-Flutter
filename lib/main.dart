@@ -11,9 +11,7 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  botaoAction() {
-    print("Clicou no botão...");
-  }
+  botaoAction() {}
 
   @override
   Widget build(BuildContext context) {
@@ -22,17 +20,31 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('Meu primeiro App'),
         ),
-        body: Center(
-          child: Column(
-            children: <Widget>[
-              Text('Clique no botão'),
-              TextButton(
-                child: Text('Clique Aqui'),
-                onPressed: botaoAction,
-              ),
-            ],
-          ),
+        body: Column(
+          children: <Widget>[Exemplo(), Exemplo()],
         ),
+      ),
+    );
+  }
+}
+
+class Exemplo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 200,
+      color: Colors.red,
+      margin: EdgeInsets.all(10),
+      padding: EdgeInsets.all(10),
+      child: Column(
+        children: [
+          Text('Texto de exemplo'),
+          TextButton(
+              child: Text('Clique aqui'),
+              onPressed: () {
+                print("Clicou...");
+              })
+        ],
       ),
     );
   }
