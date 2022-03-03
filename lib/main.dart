@@ -11,34 +11,29 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
+  botaoAction() {
+    print("Clicou no botão...");
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: Scaffold(
-            appBar: AppBar(
-              title: Text('Meu primeiro App'),
-            ),
-            body: Column(
-              children: [
-                Row(
-                  children: [
-                    Text('Exemplo'),
-                    Icon(
-                      Icons.star,
-                      color: Colors.red,
-                    )
-                  ],
-                ),
-                Row(
-                  children: [
-                    Text('Exemplo2'),
-                    Icon(
-                      Icons.star,
-                      color: Colors.red,
-                    )
-                  ],
-                )
-              ],
-            )));
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Meu primeiro App'),
+        ),
+        body: Center(
+          child: Column(
+            children: <Widget>[
+              Text('Clique no botão'),
+              TextButton(
+                child: Text('Clique Aqui'),
+                onPressed: botaoAction,
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
