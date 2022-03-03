@@ -18,16 +18,27 @@ class MyApp extends StatelessWidget {
             appBar: AppBar(
               title: Text('Meu primeiro App'),
             ),
-            body: Container(
-                color: Colors.red,
-                child: Row(children: [
-                  Expanded(
-                    child: Text('Nome'),
-                  ),
-                  Expanded(
-                    child: Text('Sobrenome'),
-                  ),
-                  Expanded(child: Text('Idade'))
-                ]))));
+            body: Column(
+              children: [
+                Row(
+                  children: [
+                    Text('Exemplo'),
+                    Icon(
+                      Icons.star,
+                      color: Colors.red,
+                    )
+                  ],
+                ),
+                Row(
+                  children: [
+                    Text('Exemplo2'),
+                    Icon(
+                      Icons.star,
+                      color: Colors.red,
+                    )
+                  ],
+                )
+              ],
+            )));
   }
 }
