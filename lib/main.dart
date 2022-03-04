@@ -18,33 +18,18 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Meu primeiro App'),
+          title: Text('BarbieTattoo'),
         ),
         body: Column(
-          children: <Widget>[Exemplo(), Exemplo()],
+          children: <Widget>[
+            Image(
+              width: 100,
+              image: AssetImage('assets/teste.jpg'),
+            ),
+            Image.network(
+                'https://www.google.com/logos/doodles/2022/winter-games-2022-begin-mar-4-6753651837109365-s.png')
+          ],
         ),
-      ),
-    );
-  }
-}
-
-class Exemplo extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 200,
-      color: Colors.red,
-      margin: EdgeInsets.all(10),
-      padding: EdgeInsets.all(10),
-      child: Column(
-        children: [
-          Text('Texto de exemplo'),
-          TextButton(
-              child: Text('Clique aqui'),
-              onPressed: () {
-                print("Clicou...");
-              })
-        ],
       ),
     );
   }
