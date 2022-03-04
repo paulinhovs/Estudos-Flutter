@@ -11,26 +11,33 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  botaoAction() {}
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('BarbieTattoo'),
-        ),
-        body: Column(
-          children: <Widget>[
-            Image(
-              width: 100,
-              image: AssetImage('assets/teste.jpg'),
-            ),
-            Image.network(
-                'https://www.google.com/logos/doodles/2022/winter-games-2022-begin-mar-4-6753651837109365-s.png')
-          ],
-        ),
-      ),
+          appBar: AppBar(
+            title: Text('BarbieTattoo'),
+          ),
+          body: Center(
+              child: Column(
+            children: <Widget>[
+              Text(
+                'Titulo',
+                style: TextStyle(
+                  color: Colors.red,
+                  fontSize: 30,
+                ),
+              ),
+              Container(
+                child: Icon(
+                  Icons.star,
+                  size: 40,
+                  color: Colors.blue,
+                ),
+              ),
+              TextButton(onPressed: null, child: Text('Clique aqui'))
+            ],
+          ))),
     );
   }
 }
